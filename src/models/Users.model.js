@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const userSchema = new Schema({
+const UserSchema = new Schema({
     username: {
         type: String,
         required: true,
@@ -31,21 +31,9 @@ const userSchema = new Schema({
     refreshToken: {
         type: String,
     },
-    followers: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }
-    ],
-    following: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }
-    ],
 },
 {
     timestamps : true
 })
 
-export default User = mongoose.model("User", userSchema)
+export default User = mongoose.model("User", UserSchema)
