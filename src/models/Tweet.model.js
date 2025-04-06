@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const TweetSchema = new Schema({
     owner : {
@@ -29,5 +30,7 @@ const TweetSchema = new Schema({
 },{
     timestamps : true
 })
+
+TweetSchema.plugin(mongooseAggregatePaginate)
 
 export default Tweet = mongoose.model("Tweet", TweetSchema)
